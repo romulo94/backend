@@ -1,0 +1,37 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres-db
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data
+    env_file: .env
+  postgres_gui:
+    image: dpage/pgadmin4:4.10
+    ports:
+      - "80:80"
+    env_file: .env
+  redis:
+    image: redis:5.0.5
+    container_name: redis-db
+    command: redis-server --requirepass redis
+    ports:
+      - "6379:6379"
+  app:
+    build: .
+    command: npm start
+    container_name: cbank-app
+    env_file: .env
+    depends_on:
+      - postgres
+      - redis
+    volumes:
+      - .:/srv/app/
+      - /srv/app/node_modules
+    links: 
+      - postgres
+      - redis
+    ports:
+      - "3000:3000"
