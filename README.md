@@ -56,3 +56,8 @@
   - Iniciar os container no _modo detach_ (background mode) `docker-compose up -d`
   - Parar todos os containers `docker stop $(docker ps -a -q)`
   - Apagar todos os containers `docker rm $(docker ps -a -q)`
+
+## Habilitando eslint
+
+- Nas extensões instalar Eslint e prettier
+- logo após, entrar nas settings.json do editor ( Caso for VsCode ) e colocar : `"editor.formatOnSave: true"` e `"prettier.esLintIntegration": true`
