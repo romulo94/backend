@@ -64,4 +64,4 @@
 
 ## Iniciando o projeto
 
-- Após instalas as dependências usando `yarn ` ou `yarn install` execute `yarn dev`
+- Após instalas as dependências usando `yarn` ou `yarn install` execute `yarn dev`
