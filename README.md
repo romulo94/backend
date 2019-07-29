@@ -31,7 +31,7 @@
   **Não feche a janela do terminal!**
   **OBS: Se estiver no ubuntu provavelmente deverá rodar o `docker` com `sudo`**
 
-  **CTRL + C ou ⌘ + C (MAC)** para encerrar os containers.
+  **CTRL + C** para encerrar os containers.
 
 - Para recriar os containers utilize:
 
@@ -50,7 +50,7 @@
 - No browser acesse:
 
   - [http://localhost:80](http://localhost:80) Postgres **PgAdmin**
-  - [http://localhost:3000](http://localhost:3000) Aplicação **Node**
+  - [http://localhost:3001](http://localhost:3001) Aplicação **Node**
 
 - Utilitarios
   - Iniciar os container no _modo detach_ (background mode) `docker-compose up -d`
@@ -61,3 +61,7 @@
 
 - Nas extensões instalar Eslint e prettier
 - logo após, entrar nas settings.json do editor ( Caso for VsCode ) e colocar : `"editor.formatOnSave: true"` e `"prettier.esLintIntegration": true`
+
+## Iniciando o projeto
+
+- Após instalas as dependências usando `yarn ` ou `yarn install` execute `yarn dev`
