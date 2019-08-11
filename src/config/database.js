@@ -1,9 +1,9 @@
 module.exports = {
-  dialect: 'postgres',
-  host: '127.0.0.1',
-  username: 'postgres',
-  password: 'password',
-  database: 'community_bank',
+  dialect: process.env.DATABASE_DIALECT,
+  host: process.env.DATABASE_URL,
+  username: process.env.POSTGRES_USER,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DB,
   operatorAliases: false,
   define: {
     timestamps: true,
