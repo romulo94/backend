@@ -1,15 +1,21 @@
 FROM node:12.5.0-slim
 
-ENV APP_PATH /srv/app/
-
-WORKDIR $APP_PATH
+WORKDIR  /srv/app
 
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
-COPY package.json yarn.lock $APP_PATH
 
-COPY . $APP_PATH
+COPY package.json yarn.lock ./
+
+COPY . .
+
+RUN yarn
 
 RUN yarn global add nodemon
-RUN yarn install --pure-lockfile
+RUN yarn global add sucrase
+RUN yarn global add sequelize-cli
+RUN yarn global add sequelize
 
 EXPOSE 3000
+
+CMD ['yarn','start']
+

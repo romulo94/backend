@@ -1,4 +1,5 @@
-require('dotenv').config();
+require('../bootstrap');
+
 module.exports = {
   dialect: process.env.DATABASE_DIALECT,
   host: process.env.DATABASE_URL,
