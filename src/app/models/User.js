@@ -14,7 +14,11 @@ class User extends Model {
         active: Sequelize.BOOLEAN,
         password: Sequelize.VIRTUAL,
       },
-      { sequelize }
+      {
+        sequelize,
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+      }
     );
 
     this.addHook('beforeSave', async user => {
